@@ -5,6 +5,8 @@ import com.oauthtest.oauthtest.config.SecurityConfig;
 import com.oauthtest.oauthtest.entity.Member;
 import com.oauthtest.oauthtest.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +43,17 @@ public class IndexController {
     @GetMapping("/login")
     public  String login(){
         return "loginForm";
+    }
+
+    @GetMapping("/info")
+    @Secured("ROLE_ADMIN")
+    public String info(){
+        return "info";
+    }
+    @GetMapping("/data")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
+    public String data(){
+        return "data";
     }
 
     @GetMapping("/join")
