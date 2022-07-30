@@ -21,4 +21,6 @@ public class Member {
     private String email;
     private String roles;
     private LocalDateTime createAt = LocalDateTime.now();
+    private String provider;
+    private String providerId;
 }

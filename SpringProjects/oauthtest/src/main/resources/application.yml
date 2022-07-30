@@ -1,11 +1,11 @@
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2
-  datasource:
-    url: jdbc:h2:mem:test
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 237415969235-ca4slq2bjbookju5o5hjrdq1fk4f8m99.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
