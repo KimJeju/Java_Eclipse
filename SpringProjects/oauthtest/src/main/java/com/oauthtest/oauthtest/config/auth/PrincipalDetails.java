@@ -17,13 +17,22 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     private Member member;
 
+
+    private Map<String, Object> attributes;
+
     public PrincipalDetails(Member member) {
         this.member = member;
     }
 
+    //oauth2 로그인 인증을 위한 생성자.
+    public PrincipalDetails(Member member,Map<String, Object> attributes){
+        this.member = member;
+        this.attributes = attributes;
+    }
+
     @Override
     public Map<String, Object> getAttributes() {
-        return null;
+        return attributes;
     }
 
     @Override

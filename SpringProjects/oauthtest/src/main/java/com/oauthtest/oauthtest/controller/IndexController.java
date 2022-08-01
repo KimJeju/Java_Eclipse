@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,13 +30,23 @@ public class IndexController {
 
 
     @GetMapping("/")
-    public @ResponseBody String index(){
+    public String index(@AuthenticationPrincipal PrincipalDetails principalDetails, Model model){
+
+        //로그인 페이지에서의 정상 로그인 정보
+        try {
+            if(principalDetails.getMember() != null){
+                model.addAttribute("username",principalDetails.getUsername());
+            }
+        }catch (NullPointerException e){}
+
         return "index";
     }
 
 
     @GetMapping("/user")
-    public @ResponseBody String user(){
+    public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        //로그인 정보 확인
+        System.out.println("member = " + principalDetails.getMember());
         return "user";
     }
 
@@ -44,7 +55,6 @@ public class IndexController {
     public @ResponseBody String admin(){
         return "admin";
     }
-
 
 
     @GetMapping("/info")
