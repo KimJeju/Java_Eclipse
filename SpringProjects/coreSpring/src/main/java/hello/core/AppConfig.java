@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 //앱전체를 설정하고 구성하는 클래스
 
 //스프링 설정정보
+//순수한 appconfig
 @Configuration
 public class AppConfig {
 
@@ -33,7 +34,7 @@ public class AppConfig {
     public MemberService memberService(){
         //리파지토리 선택
         //생성자 주입
-
+        System.out.println("call AppConfig.memberService");
         //new MemoryMemberRepository() 에 컨트롤 +  알트 + m 을 해주면 역할을 분리해주
 //        return new MemberServiceImpl(new MemoryMemberRepository());
         return new MemberServiceImpl(MemberRepository());
@@ -43,7 +44,7 @@ public class AppConfig {
     //레파지토리 역할
     @Bean
     public MemoryMemberRepository MemberRepository() {
-
+        System.out.println("call AppConfig.MemberRepository");
        //만약 멤버리포지토리를 변경할 것이면 이곳만 변경하면 된다.
         return new MemoryMemberRepository();
     }
@@ -52,6 +53,7 @@ public class AppConfig {
     //오더서비스 역할
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         //할인정책과 멤버정보를 가져올 레파지토리 생성자주입
         return new OrderServiceImpl(MemberRepository(),discountPolicy());
     }

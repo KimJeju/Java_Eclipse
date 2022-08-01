@@ -6,7 +6,10 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
 
@@ -19,6 +22,7 @@ public class OrderServiceImpl implements OrderService{
     //DIP를 지킴 (Dependency Inversion principle) 추상 의존 O 구현 의존 X
     //생성자 주입
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
@@ -37,5 +41,11 @@ public class OrderServiceImpl implements OrderService{
 
         //주문반환
         return new Order(memberId,itemName,itemPrice,discountPrice);
+    }
+
+
+    //test용
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }

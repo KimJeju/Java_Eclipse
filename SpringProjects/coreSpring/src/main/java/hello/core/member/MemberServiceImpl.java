@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
 
@@ -9,6 +13,8 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
 
     //생성자를 통해서 AppConfig로부터 레파지토리를 선택받는다.
+
+    @Autowired //자동의존관계 주입
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -21,5 +27,11 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+
+    //test용
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
