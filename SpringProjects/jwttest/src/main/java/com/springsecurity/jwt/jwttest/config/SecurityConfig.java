@@ -21,7 +21,6 @@ import org.springframework.web.filter.CorsFilter;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-
     private final CorsFilter corsFilter;
     private final MemberRepository memberRepository;
 
@@ -47,6 +46,7 @@ public class SecurityConfig {
                 .anyRequest().permitAll()
                 .and()
                 .addFilter(corsFilter);
+
 
         return http.build();
     }

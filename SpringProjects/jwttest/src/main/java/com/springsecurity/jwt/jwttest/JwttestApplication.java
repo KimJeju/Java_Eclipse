@@ -19,4 +19,6 @@ public class JwttestApplication {
 		SpringApplication.run(JwttestApplication.class, args);
 	}
 
+	//커밋용
+
 }
