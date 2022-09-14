@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: sebcontents/client
+    restart: 'always'
+    ports:
+      - "8080:80"
+    container_name: client
+
+  spring:
+    image: 0xnsky/server-spring
+    restart: 'always'
+    ports:
+      - "4999:3000"
+    container_name: server-spring

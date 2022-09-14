@@ -1,0 +1,124 @@
+.todo--list--item {
+  width: 30%;
+  height: 27%;
+  border-radius: 3%;
+  color: white;
+  /* font-size: 2rem;
+    font-weight: 800; */
+  position: relative;
+  /* overflow-y: scroll; */
+  /* background-color: powderblue; */
+}
+.todo--list--item:hover {
+  width: 33%;
+  height: 30%;
+  transition: 0.5s;
+}
+
+.todo--list--item > p:first-child {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.todo--list--item > p:nth-child(2) {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.todo--list--item:first-child {
+  background-color: #ec5b55;
+  color: #af1f0e;
+}
+.todo--list--item:nth-child(2) {
+  background-color: #f08c34;
+  color: #c55223;
+}
+.todo--list--item:nth-child(3) {
+  background-color: #f9dd6c;
+  color: #d8ab3a;
+}
+.todo--list--item:nth-child(4) {
+  background-color: #388174;
+  color: #74fbe2;
+}
+.todo--list--item:nth-child(5) {
+  background-color: #49c5b6;
+  color: #265a55;
+}
+.todo--list--item:nth-child(6) {
+  background-color: #a9d1d5;
+  color: #5a8085;
+}
+.todo--list--item:nth-child(7) {
+  background-color: #7a55e7;
+  color: #bdaae8;
+}
+.todo--list--item:nth-child(8) {
+  background-color: #495de6;
+  color: #b0bafa;
+}
+.todo--list--item:nth-child(9) {
+  background-color: #3983dd;
+  color: #a4d3fb;
+}
+
+/* #color0 {
+  background-color: #ec5b55;
+  color: #af1f0e;
+}
+#color1 {
+  background-color: #f08c34;
+  color: #c55223;
+}
+#color2 {
+  background-color: #f9dd6c;
+  color: #d8ab3a;
+}
+#color3 {
+  background-color: #388174;
+  color: #74fbe2;
+}
+#color4 {
+  background-color: #49c5b6;
+  color: #265a55;
+}
+#color5 {
+  background-color: #a9d1d5;
+  color: #5a8085;
+}
+#color6 {
+  background-color: #7a55e7;
+  color: #bdaae8;
+}
+#color7 {
+  background-color: #495de6;
+  color: #b0bafa;
+}
+#color8 {
+  background-color: #3983dd;
+  color: #a4d3fb;
+}
+#color9 {
+  background-color: #50586c;
+  color: #dce2f0;
+} */
+
+.icon {
+  /* color: black; */
+  position: absolute;
+  bottom: 10%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: font-size 0.2s;
+}
+.icon:hover {
+  font-size: 1.4rem;
+}
+.pencil {
+  left: 70%;
+}
+.trash {
+  left: 80%;
+}
+.checkbox {
+  left: 90%;
+}

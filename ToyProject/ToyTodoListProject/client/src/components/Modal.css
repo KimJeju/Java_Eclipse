@@ -1,0 +1,104 @@
+.modal--container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal button {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+}
+.modal--body {
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+
+.modal--body header {
+  /* position: relative; */
+  /* padding: 16px 64px 16px 16px; */
+  height: fit-content;
+  background-color: #f1f1f1;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > h1 {
+  font-size: 1rem;
+  margin: 5px;
+}
+.modal--body header button {
+  width: 30px;
+  margin: 5px;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: #999;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+main {
+  /* padding: 16px; */
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+  /* background: powderblue; */
+  padding-left: 20px;
+}
+.todo--title,
+.todo--contents {
+  border: 0;
+  background: #f1f1f1;
+  margin-bottom: 10px;
+  border-radius: 0.3rem;
+}
+
+.todo--contents {
+  width: 300px;
+  height: 200px;
+}
+.modal--body footer {
+  padding: 12px 16px;
+  text-align: right;
+}
+.add--btn {
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal--container.openedModal {
+  display: flex;
+  align-items: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show 0.3s;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

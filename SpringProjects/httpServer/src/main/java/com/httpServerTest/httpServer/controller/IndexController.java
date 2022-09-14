@@ -55,7 +55,7 @@ public class IndexController {
     }
 
     @GetMapping("/join")
-    public @ResponseBody String join(){
+    public String join(){
         return "joinForm";
     }
 
