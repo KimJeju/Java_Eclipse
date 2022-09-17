@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AddressController {
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String address(){
         return "address";
     }
